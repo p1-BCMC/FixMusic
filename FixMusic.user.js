@@ -2,7 +2,9 @@
 // @name         Fix Music
 // @namespace    p1
 // @run-at       document-start
-// @version      0.1
+// @version      0.2
+// @updateURL    https://github.com/p1-BCMC/FixMusic/raw/master/FixMusic.user.js
+// @downloadURL  https://github.com/p1-BCMC/FixMusic/raw/master/FixMusic.user.js
 // @description  Enables ingame music playback as intended on *ALL* browsers
 // @author       p1
 // @match        https://boxcritters.com/play/

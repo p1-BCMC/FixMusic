@@ -134,9 +134,14 @@
                 audioWarning.remove();
             }), world.stage);
             world.stage.addChild(audioWarning);
+            world.stage.children[world.stage.children.length - 1].name = "audioWarning";
         };
 
         world.on("joinRoom", function() {
+            if (world.stage.getChildByName("audioWarning") != undefined) {
+                audioWarning.remove();
+            };
+            
             if (isSafari) {
                 createjs.Sound.removeSound("music");
                 createjs.Sound._listeners.fileload = [];

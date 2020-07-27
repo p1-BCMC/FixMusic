@@ -2,7 +2,7 @@
 // @name         Fix Music
 // @namespace    p1
 // @run-at       document-start
-// @version      0.3
+// @version      0.4
 // @updateURL    https://github.com/p1-BCMC/FixMusic/raw/master/FixMusic.user.js
 // @downloadURL  https://github.com/p1-BCMC/FixMusic/raw/master/FixMusic.user.js
 // @description  Enables ingame music playback as intended on *ALL* browsers
@@ -139,9 +139,9 @@
 
         world.on("joinRoom", function() {
             if (world.stage.getChildByName("audioWarning") != undefined) {
-                audioWarning.remove();
+                world.stage.getChildByName("audioWarning").remove();
             };
-            
+
             if (isSafari) {
                 createjs.Sound.removeSound("music");
                 createjs.Sound._listeners.fileload = [];

@@ -2,7 +2,7 @@
 // @name         Fix Music
 // @namespace    p1
 // @run-at       document-start
-// @version      0.2
+// @version      0.3
 // @updateURL    https://github.com/p1-BCMC/FixMusic/raw/master/FixMusic.user.js
 // @downloadURL  https://github.com/p1-BCMC/FixMusic/raw/master/FixMusic.user.js
 // @description  Enables ingame music playback as intended on *ALL* browsers
@@ -128,12 +128,12 @@
             };
 
             let audioWarning = new box.Alert("Please enable automatic audio playback for this website in your browser! " + helpText);
-            audioWarning.centerTo(world.stage.room);
+            audioWarning.centerTo(world.stage);
             audioWarning.y = 20;
             audioWarning.on("click", (function() {
                 audioWarning.remove();
-            }), world.stage.room);
-            world.stage.room.addChild(audioWarning);
+            }), world.stage);
+            world.stage.addChild(audioWarning);
         };
 
         world.on("joinRoom", function() {

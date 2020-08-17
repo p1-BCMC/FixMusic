@@ -2,7 +2,7 @@
 // @name         Fix Music
 // @namespace    p1
 // @run-at       document-start
-// @version      0.4
+// @version      0.4.1
 // @updateURL    https://github.com/p1-BCMC/FixMusic/raw/master/FixMusic.user.js
 // @downloadURL  https://github.com/p1-BCMC/FixMusic/raw/master/FixMusic.user.js
 // @description  Enables ingame music playback as intended on *ALL* browsers
@@ -67,7 +67,7 @@
 			(browsers require website interaction for playback)!
 			*/
 
-			createjs.Sound.registerSound(world.stage.room.artwork.music, "music");
+			createjs.Sound.registerSound(world.stage.room.data.music, "music");
 			createjs.Sound.on("fileload", (function() {
 				createjs.Sound._listeners.fileload = [];
 				let testPlayer = createjs.Sound.play("music", {
@@ -88,8 +88,8 @@
 
         function setupAudioPlaybackSafari() {
 
-			audioElement = document.createElement("AUDIO");
-            audioElement.src = world.stage.room.artwork.music;
+	    audioElement = document.createElement("AUDIO");
+            audioElement.src = world.stage.room.data.music;
             audioElement.loop = true;
             audioElement.volume = 0.5;
             audioElement.preload = true;
@@ -146,8 +146,8 @@
                 createjs.Sound.removeSound("music");
                 createjs.Sound._listeners.fileload = [];
                 audioElement.pause();
-                if (world.stage.room.artwork.music != undefined) {
-                    audioElement.src = world.stage.room.artwork.music;
+                if (world.stage.room.data.music != undefined) {
+                    audioElement.src = world.stage.room.data.music;
                     audioElement.play();
                 };
             };
